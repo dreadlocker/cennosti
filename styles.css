@@ -1,0 +1,52 @@
+body {
+    background-color: black;
+    margin: 5px;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+}
+
+#page1,
+#page2,
+#page3,
+#page4,
+#page5 {
+    max-width: 100%;
+}
+
+#page2,
+#page3,
+#page4,
+#page5 {
+    display: none;
+}
+
+#leftArrowContainer {
+    margin: auto 5px auto auto;
+}
+
+#rightArrowContainer {
+    margin: auto auto auto 5px;
+}
+
+#leftArrow {
+    visibility: hidden;
+}
+
+#leftArrow,
+#rightArrow {
+    color: rgb(179, 176, 4);
+    font-size: 6vw;
+    cursor: pointer;
+    background-color: Transparent;
+    border: none;
+    outline: none;
+    opacity: 0.6;
+}
+
+#leftArrow:hover,
+#rightArrow:hover {
+    opacity: 1;
+}
