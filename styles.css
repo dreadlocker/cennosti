@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: white;
     margin: 5px;
     padding: 0;
 }
@@ -12,19 +12,22 @@ body {
 #page2,
 #page3,
 #page4,
-#page5 {
-    max-width: 100%;
+#page5,
+#page6 {
+    width: 100%;
+}
+
+#leftArrowContainer {
+    margin: auto 5px auto auto;
 }
 
 #page2,
 #page3,
 #page4,
-#page5 {
+#page5,
+#page6,
+    {
     display: none;
-}
-
-#leftArrowContainer {
-    margin: auto 5px auto auto;
 }
 
 #rightArrowContainer {
@@ -49,4 +52,8 @@ body {
 #leftArrow:hover,
 #rightArrow:hover {
     opacity: 1;
+}
+
+#imageContainer {
+    width: 33%
 }
