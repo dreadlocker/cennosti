@@ -28,13 +28,13 @@ html {
 
 #leftArrow,
 #rightArrow {
-    color: rgb(179, 176, 4);
+    color: #056839;
     font-size: 6vw;
     cursor: pointer;
     background-color: Transparent;
     border: none;
     outline: none;
-    opacity: 0.6;
+    opacity: 0.1;
     font-size: 15vw;
 }
 
