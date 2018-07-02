@@ -1,5 +1,6 @@
 /* height: 100%; in body, html, #container
    to show the background-image on fullscreen */
+
 body {
     background-color: white;
     margin: 0;
@@ -14,16 +15,21 @@ html {
 #container {
     display: flex;
     height: 100%;
+    /* width: 60%; */
 }
 
 #page1 {
-    width: 100%;
+    width: 60%;
 }
 
 #leftArrowContainer,
 #rightArrowContainer {
     margin: auto 5px;
     width: 20%;
+}
+
+#leftArrowContainer {
+    text-align: -webkit-right;
 }
 
 #leftArrow,
@@ -40,6 +46,7 @@ html {
 
 #leftArrow {
     text-shadow: -3px 3px 5px black;
+    text-align: -webkit-right;
 }
 
 #rightArrow {
@@ -63,9 +70,18 @@ html {
 }
 
 /* desktop version */
-
 @media only screen and (min-width: 1024px) {
     #imageContainer {
         margin: 5%;
+    }
+    #leftArrow,
+    #rightArrow {
+        font-size: 10vw;
+    }
+    #leftArrow {
+        margin-left: 8.5rem;
+    }
+    #rightArrow {
+        margin-right: 8.5rem;
     }
 }
