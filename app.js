@@ -1,34 +1,62 @@
 window.onload = function () {
     const leftArrow = document.getElementById('leftArrow');
     const rightArrow = document.getElementById('rightArrow');
-    const totalPictures = document.getElementsByClassName('count').length;
-    let pagesID = 1;
+    const pictures = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6'];
+    let count = 0;
+    leftArrow.style.display = 'none';
+
+    document.addEventListener('keydown', function (event) {
+        keyPressRightArrow(event);
+        keyPressLeftArrow(event);
+    });
 
     leftArrow.addEventListener('click', function () {
-        document.getElementById(`page${pagesID}`).style.display = 'none';
-        pagesID--;
-        document.getElementById(`page${pagesID}`).style.display = 'inline-block';
-
-        if (pagesID < totalPictures) {
-            document.getElementById(`rightArrow`).style.visibility = 'visible';
-        }
-
-        if (pagesID == 1) {
-            document.getElementById(`leftArrow`).style.visibility = 'hidden';
-        }
+        leftArrowClicked();
     });
 
     rightArrow.addEventListener('click', function () {
-        document.getElementById(`page${pagesID}`).style.display = 'none';
-        pagesID++;
-        document.getElementById(`page${pagesID}`).style.display = 'inline-block';
+        rightArrowClicked();
+    });
 
-        if (pagesID > 1) {
-            document.getElementById(`leftArrow`).style.visibility = 'visible';
+    function keyPressRightArrow(event){
+        if (event.key == 'ArrowRight') {
+            if(count == pictures.length-1){
+                rightArrow.style.display = 'none';
+                return;
+            }
+            rightArrowClicked();
+        }
+    }
+
+    function keyPressLeftArrow(event){
+        if (event.key == 'ArrowLeft') {
+            if(count == 0){
+                leftArrow.style.display = 'none';
+                return;
+            }
+            leftArrowClicked();
+        }
+    }
+
+    function leftArrowClicked() {
+        count--;
+
+        if (count == 0) {
+            leftArrow.style.display = 'none';
+        }
+
+        rightArrow.style.display = 'block'
+        document.getElementById("imageContainer").style.backgroundImage = `url('Pictures/${pictures[count]}.png')`;
+    };
+
+    function rightArrowClicked() {
+        count++;
+        document.getElementById("imageContainer").style.backgroundImage = `url('Pictures/${pictures[count]}.png')`;
+
+        if (count == pictures.length-1) {
+            rightArrow.style.display = 'none';
         }
         
-        if (pagesID == totalPictures) {
-            document.getElementById(`rightArrow`).style.visibility = 'hidden';
-        }
-    });
+        leftArrow.style.display = 'block';
+    }
 };

@@ -1,41 +1,27 @@
 body {
     background-color: white;
-    margin: 5px;
+    margin: 0;
     padding: 0;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 #container {
     display: flex;
+    height: 100%;
 }
 
-#page1,
-#page2,
-#page3,
-#page4,
-#page5,
-#page6 {
+#page1 {
     width: 100%;
 }
 
-#leftArrowContainer {
-    margin: auto 5px auto auto;
-}
-
-#page2,
-#page3,
-#page4,
-#page5,
-#page6,
-    {
-    display: none;
-}
-
+#leftArrowContainer,
 #rightArrowContainer {
-    margin: auto auto auto 5px;
-}
-
-#leftArrow {
-    visibility: hidden;
+    margin: auto 5px;
+    width: 20%;
 }
 
 #leftArrow,
@@ -47,6 +33,15 @@ body {
     border: none;
     outline: none;
     opacity: 0.6;
+    font-size: 15vw;
+}
+
+#leftArrow {
+    text-shadow: -3px 3px 5px black;
+}
+
+#rightArrow {
+    text-shadow: 3px 3px 5px black;
 }
 
 #leftArrow:hover,
@@ -54,6 +49,21 @@ body {
     opacity: 1;
 }
 
+/* mobile version */
+
 #imageContainer {
-    width: 33%
+    width: 100%;
+    background-image: url('Pictures/page1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 10px;
+}
+
+/* desktop version */
+
+@media only screen and (min-width: 1024px) {
+    #imageContainer {
+        margin: 5%;
+    }
 }
